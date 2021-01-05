@@ -39,12 +39,14 @@
 .header_top_c3_r1{
     font-size: 14px;
     float: right;
+    font-weight: bold;
     margin-bottom: 10px;
     clear: both;
 }
 .header_top_c3_r2{
     font-size: 12px;
     float: right;
+    font-weight: bold;
     clear: both;
 }
 .header_top_c3_r2 ul{
@@ -179,20 +181,16 @@
     height: 605px;
     width: 520px;
     margin-left: 25px;
-    background-color: yellow;
+    background-color:#ffffff;
     float: left;
 }
-.body_header{
-    height: 25px;
-    width: 518px;
-    margin: 1px;
-    background-color: lightgreen; 
+.body_header h1{
+    font-size: 25px;
+    font-weight: 200;
 }
 .body_content_r1{
     margin-top: 12px;
-    height: 550px;
     width: 518px;
-    background-color: skyblue;
 }
 .body_content_en_sub{
     height: 68px;
@@ -214,22 +212,65 @@
 
 }
 .body_content_img_des{
-    margin-top: 15px;
     height: 85px;
     background-color: white;
 }
 .body_img_container{
-    height: 70px;
-    width: 70px;
     float: left;
     margin-right: 10px;
-    background-color: purple;
 }
 .body_content_container{
     height: 70px;
-    width: 380px;
+    width: 400px;
     float: left;
-    background-color: purple;
+}
+.body_content_container p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.img_content_container {
+    clear: both;
+    padding-bottom: 12px;
+    padding-top: 14px;
+    border-bottom: 2px solid #d8d8d8;
+    float: left;
+}
+.user_detail {
+    font-size: 12px;
+    float: left;
+    margin-top: 6px;
+    color: #606060;
+}
+.user_detail ul{
+    list-style: none;
+}
+.user_detail li{
+    display: inline;
+    padding: 0 5px;
+    border-right: solid 1px black;
+}
+.user_detail a{
+    color: #4eafbf;
+    text-decoration: none;
+}
+.from_topic_box{
+    clear: both;
+    float: left;
+    margin-top: 7px;
+}
+.from_topic_box p{
+    font-size: 12px;
+    color: #606060;
+}
+.from_topic_box a{
+    color: #4eafbf;
+    text-decoration: none;
+}
+.new_content{
+    color: #4eafbf;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 .body_right{
     height: 605px;
