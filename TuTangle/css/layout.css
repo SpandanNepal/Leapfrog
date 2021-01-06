@@ -242,21 +242,68 @@
 .body_content_en_sub{
     height: 68px;
     width: 516px;
-    margin: 1px;
     background-color: white;
 }
-.body_content_en_sub_r1{
-    height: 38px;
-    width: 514px;
-    margin: 1px;
-    background-color: purple;
+.body_content_en_sub_c1{
+    width: 256px;
+    float: left;
+    margin-right: 2px;
+    background-color: #f5f5f5;
 }
-.body_content_en_sub_r2{
-    height: 30px;
-    width: 514px;
-    margin: 1px;
-    background-color: purple;
+.body_content_en_sub_c2{
+    width: 256px;
+    float: right;
+    background-color: #f5f5f5;
+}
+.all_entries_container{
+    float: left;
+}
+.all_entries{
+    width: 246px;
+    padding-left: 10px;
+    padding-top: 14px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.subscribed_container{
+    float: right;
+}
+.subscribed{
+    width: 246px;
+    padding-right: 10px;
+    padding-top: 14px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.all_members{
+    margin-top: 8px;
+}
+.all_members:hover .all_entries_text{
+    background-color: #2FC1DA;
+    color: white;
+}
+.all_members:hover .all_members_left{
+    background-image: url("images/left_all_members_btn.jpg") no-repeat;
+}
+.all_members:hover{
 
+}
+.all_members_left{
+    float: left;
+}
+.all_members_right{
+    float: left;
+    margin-right: 10px;
+}
+.all_entries_text{
+    width: 86px;
+    float: left;
+    padding-top: 9px;
+    padding-bottom: 5px;
+    color: #black;
+    text-align: center;
+    font-size: 12px;
+    background-color: #dddddd;
 }
 .body_content_img_des{
     height: 85px;
