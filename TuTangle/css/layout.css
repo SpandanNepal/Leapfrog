@@ -1,8 +1,7 @@
 .header-top-wrapper{
     background-color: #7dd9e8;
     height: 85px;
-    width: 100%;
-    
+    width: 100%;  
 }
 .header_top{
     background-color: #7dd9e8;
@@ -83,6 +82,11 @@
 }
 .dark_search_right{
     float: right;
+}
+.dark_search_bar a{
+    color: white;
+    text-decoration: none;
+    line-height: 20px;
 }
 /*.dark_search_right img{
     float: left;
@@ -261,6 +265,7 @@
     height: 68px;
     width: 516px;
     background-color: white;
+    border-bottom: 2px solid #2fc1da;
 }
 .body_content_en_sub_c1{
     width: 256px;
