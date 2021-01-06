@@ -203,6 +203,9 @@
     overflow: auto;
     padding-top: 15px;
 }
+.search_items_d:hover{
+    background-color: #ffffff;
+}
 .search_items_d p{
     font-size: 13px;
     padding-left: 14px;
@@ -222,6 +225,9 @@
     width: 100%;
     overflow: auto;
     padding-top: 15px;
+}
+.search_items_h:hover{
+    background-color: #ffffff
 }
 .search_items_h p{
     font-size: 12px;
@@ -290,6 +296,15 @@
 .all_members{
     margin-top: 8px;
 }
+.all_members_left{
+    float: left;
+    content: url('../images/friends_entries_comments_left.jpg');
+}
+.all_members_right{
+    float: left;
+    margin-right: 10px;
+    content: url('../images/friends_entries_comments_right.jpg');
+}
 .all_members:hover .all_entries_text{
     background-color: #2FC1DA;
     color: white;
@@ -300,15 +315,6 @@
 .all_members:hover .all_members_left{
     content: url('../images/left_all_members_btn.jpg');
 } 
-.all_members_left{
-    float: left;
-    content: url('../images/friends_entries_comments_left.jpg');
-}
-.all_members_right{
-    float: left;
-    margin-right: 10px;
-    content: url('../images/friends_entries_comments_right.jpg');
-}
 .all_entries_text{
     width: 86px;
     float: left;
@@ -412,6 +418,9 @@
     width: 100%;
     overflow: auto;
     padding-top: 15px;
+}
+.video_items:hover{
+    background-color: #ffffff;
 }
 .video_items p{
     font-size: 13px;
