@@ -1,14 +1,23 @@
-.header_wrapper{
-    background-color: White;
-    width: 1002px;
-    margin: 0 auto;
+.header-top-wrapper{
+    background-color: #7dd9e8;
+    height: 85px;
+    width: 100%;
+    
 }
 .header_top{
     background-color: #7dd9e8;
+    width: 1002px;
+    margin: 0 auto;
     height: 85px;
+}
+.header_bottom_wrapper{
+    width: 100%;
+    background-color: #f5f5f5;
 }
 .header_bottom{
     background-color: #f5f5f5;
+    width: 1002px;
+    margin: 0 auto;
     height: 40px;
 }
 .header_top_c1{
@@ -148,6 +157,9 @@
 .topic_boxes{
     margin-right: 30px;
 }
+.body_content_wrapper{
+    width: 100%;
+}
 .body_wrapper{
     height: 640px;
     width: 1002px;
@@ -282,18 +294,20 @@
     background-color: #2FC1DA;
     color: white;
 }
-/*.all_members:hover .all_members_left{
-    background-image: url("images/left_all_members_btn.jpg") no-repeat;
+.all_members:hover .all_members_right{
+    content: url('../images/right_all_members_btn.jpg');
 } 
-.all_members:hover{
-
-} */
+.all_members:hover .all_members_left{
+    content: url('../images/left_all_members_btn.jpg');
+} 
 .all_members_left{
     float: left;
+    content: url('../images/friends_entries_comments_left.jpg');
 }
 .all_members_right{
     float: left;
     margin-right: 10px;
+    content: url('../images/friends_entries_comments_right.jpg');
 }
 .all_entries_text{
     width: 86px;
@@ -405,6 +419,10 @@
     float: left;
     margin-bottom: 18px;
     font-weight: bold;
+}
+.footer_content_wrapper{
+    width: 100%;
+    background-color: #727272;
 }
 .footer_wrapper{
     margin: 0 auto;
