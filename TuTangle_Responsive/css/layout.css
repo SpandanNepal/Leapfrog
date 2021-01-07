@@ -255,10 +255,11 @@
     float: right;
 }
 .main_body{
-    width: 90%;
+    width: 80%;
     margin-left: 25px;
     background-color:#ffffff;
     float: left;
+    margin-bottom: 20px;
 }
 .body_header h1{
     font-size: 25px;
@@ -398,15 +399,16 @@
     margin-bottom: 2px;
 }
 .body_right{
-    width: 17.4650%;
+    width: 85%;
     background-color: #f5f5f5;
-    float: right;
+    margin-top: 20px;
+    margin-left: 25px;
     margin-right: 32px;
     overflow: auto;
 } 
 .body_right_wrapper{
     width: 100%;
-    display: none;
+    
 }
 .body_right_r1{
     width: 100%;
