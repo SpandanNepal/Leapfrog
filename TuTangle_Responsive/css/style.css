@@ -1,0 +1,51 @@
+@media only screen and (min-width: 768px){
+    .body_right_wrapper{
+        display: block;
+    }
+    .main_body{
+        width: 70%;
+    }
+    .footer_left{
+        font-size: 10px;
+        float: left;
+    }
+    .footer_right{
+        font-size: 10px;
+    }
+    .footer_left ul{
+        list-style: none;
+    }
+    .footer_right ul{
+        float: right;
+        margin-right: 32px;
+    }
+    
+    
+}
+@media only screen and (min-width: 980px ){
+    .body_left_wrapper{
+        display: block;
+    }
+    .main_body{
+        width: 51.8962%;
+    }
+    .all_members{
+        display:  block;
+    }
+    .footer_wrapper{
+        max-width: 62.625em;
+    }
+    .dark_search_bar{
+        display: block;
+    }
+    .header_top_c2{
+        float: left;
+        width: 35%;
+    }
+    .header_top{
+        padding-bottom: 0;
+    }
+    .header_top_c3{
+        display: block;
+    }
+}
