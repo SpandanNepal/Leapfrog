@@ -275,6 +275,11 @@
     margin-top: 30px;
     width: 100%;
 }
+.insta_grid_img{
+    content: url('../images/insta_grid_img.jpeg');
+    height: auto;
+    width: 100%;
+}
 .empty_sidebar{
     margin-top: 30px;
     overflow: auto;
