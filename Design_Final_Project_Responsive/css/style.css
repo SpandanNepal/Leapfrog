@@ -136,7 +136,9 @@
         margin-left: 10.8675%;
     }
 }
-
+.submit_story a:hover{
+    color: #fdb094;
+}
 .search_icon{
     margin: 0 auto;
     content: url('../images/search_icon.jpeg');  
