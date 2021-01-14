@@ -27,10 +27,9 @@
     margin-top: 48px;
     margin-bottom: 46px;
 }
-.header_text{
+.header_text img{
     display: block;
     margin: 0 auto;
-    content: url('../images/header_text.jpeg');
 }
 .single_slider_wrapper{
     margin: 0 auto;
@@ -178,7 +177,8 @@
     margin-bottom: 40px;
 }
 .camera_icon{
-    content: url('../images/camera_icon.jpeg');
+    position: absolute;
+
 }
 .p_post_wrapper{
     padding: 0 30px;
@@ -237,9 +237,6 @@
     width: 100%;
     height: 200px;
     background-color: #424242;
-}
-.camera_icon{
-    content: url('../images/camera_icon.jpeg');
 }
 .s_post_wrapper{
     margin-top: 38px;

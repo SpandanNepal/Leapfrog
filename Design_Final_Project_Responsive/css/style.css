@@ -139,9 +139,8 @@
 .submit_story a:hover{
     color: #fdb094;
 }
-.search_icon{
-    margin: 0 auto;
-    content: url('../images/search_icon.jpeg');  
+.search_icon img{
+    margin: 0 auto;  
 }
 .submit_story{
     font-size: 12px;
@@ -207,7 +206,7 @@
 }
 .read_btn button{
     background-color: #fdb094;
-    padding: 16px 21px;
+    padding: 11px 21px;
     border: none;
     border-radius: 2px;
     color: white;
@@ -227,7 +226,7 @@
 }
 .read_more_btn button{
     background-color: #ffffff;
-    padding: 16px 21px;
+    padding: 11px 18px;
     border: 1px solid #eaeaea;
     border-radius: 2px;
     color: #000000;
