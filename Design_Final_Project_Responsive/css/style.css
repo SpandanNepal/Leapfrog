@@ -136,6 +136,12 @@
         margin-left: 10.8675%;
     }
 }
+a h2{
+    color: black;
+}
+a h2:hover{
+    color: #fdb094;
+}
 .submit_story a:hover{
     color: #fdb094;
 }
@@ -200,6 +206,10 @@
 }
 .p_post_content p{
     font-size: 16px;
+}
+#search_inp{
+    padding: 16px 20px;
+    border: none;
 }
 .read_btn{
     float: left;
@@ -369,12 +379,14 @@
     margin-bottom: 20px;
 }
 .inp_1{
+    color: black;
     width: 90%;
     padding: 10px 10px;
     margin-bottom: 10px;
     border: none;
 }
 .inp_2{
+    color: black;
     width: 90%;
     padding: 10px 10px;
     border: none;

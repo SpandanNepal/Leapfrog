@@ -199,7 +199,7 @@
     margin-bottom: 40px;
 }
 .right_search_wrapper{
-    padding: 21px 20px;
+    
     overflow: auto;
     margin-bottom: 30px;
     background-color: #ffffff;
@@ -209,9 +209,10 @@
     font-size: 12px;
     font-weight: bold;
 }
-.right_search_icon{
+.right_search_icon img{
+    margin-top: 16px;
+    margin-right: 21px;
     float: right;
-    content: url('../images/right_search_icon.jpeg');
 }
 
 .two_col_post{
