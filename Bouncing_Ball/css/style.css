@@ -1,0 +1,22 @@
+body{
+    background: rgb(236, 236, 236);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#box{
+    height: 500px;
+    width: 500px;
+    border: 2px solid #adacac;
+    margin: 30px auto;
+    border-radius: 5px;
+    position: relative;   
+}
+#circle{
+    height: 100px;
+    width: 100px;
+    left: 40%;
+    border-radius: 50%;
+    background: rgb(5, 241, 64);
+    position: absolute;
+}
