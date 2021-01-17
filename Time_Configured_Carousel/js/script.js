@@ -62,6 +62,7 @@ Carousel.prototype.carouselIndicator = function carouselIndicator() {
     this.carouselDots.appendChild(this.carouselDots[i]);
   }
   this.carouselDots[0].classList.add('active_dots');
+  this.dotsIndicatorsEvent();
 };
 
 Carousel.prototype.nextImgSlider = function nextImgSlider() {
@@ -70,12 +71,16 @@ Carousel.prototype.nextImgSlider = function nextImgSlider() {
 
   if (nextImg) {
     this.changeImgSlide(this.imgWrapper, curImg, nextImg);
-    //carousel dots functionality to be added here
-    //var currentDot = this.carouselDots.querySelector('.active_dots');
+    var currentDot = this.carouselDots.querySelector('.active_dots');
+    var nextDot = currentDot.nextElementSibling;
+    this.updateDots(currentDot, nextDot);
   } else {
     nextImg = this.images[0];
     this.changeImgSlide(this.imgWrapper, curImg, nextImg);
-    //carousel dots functionality to be added here
+    var currentDot = this.carouselDots.querySelector('.active_dots');
+    var dotsArr = [].slice.call(this.dots);
+    var nextDot = dotsArr[0];
+    this.updateDots(currentDot, nextDot);
   }
 };
 
@@ -85,12 +90,43 @@ Carousel.prototype.prevImgSlider = function prevImgSlider() {
 
   if (prevImg) {
     this.changeImgSlide(this.imgWrapper, curImg, prevImg);
-    //carousel dots functionality to be added here
+    var currentDot = this.carouselDots.querySelector('.active_dots');
+    var nextDot = currentDot.nextElementSibling;
+    this.updateDots(currentDot, nextDot);
   } else {
     prevImg = this.images[this.images.length - 1];
     this.changeImgSlide(this.imgWrapper, curImg, prevImg);
-    //carousel dots functionality to be added here
+    var currentDot = this.carouselDots.querySelector('.active_dots');
+    var dotsArr = [].slice.call(this.dots);
+    var nextDot = dotsArr[0];
+    this.updateDots(currentDot, nextDot);
   }
+};
+Carousel.prototype.dotsIndicatorsEvent = function() {
+  var that = this;
+  this.carouselDots.addEventListener('click', function(e) {
+    var targetDot = e.target.closest('button');
+
+    if (!targetDot) return;
+
+    var currentImage = that.imgWrapper.querySelector('.active');
+    var currentDot = that.carouselDots.querySelector('.active_dots');
+
+    var dotsArr = [].slice.call(that.dots);
+    var targetIndex = dotsArr.indexOf(targetDot);
+
+    var targetImage = that.images[targetIndex];
+
+    that.changeImgSlide(that.imgWrapper, currentImage, targetImage);
+    that.updateDots(currentDot, targetDot);
+
+    that.clearResetInterval();
+  });
+};
+
+Carousel.prototype.updateDots = function(currentDot, targetDot) {
+  currentDot.classList.remove('active_dots');
+  targetDot.classList.add('active_dots');
 };
 
 Carousel.prototype.changeImgSlide = function(imgWrapper, curImg, targetImage){
@@ -102,17 +138,9 @@ Carousel.prototype.changeImgSlide = function(imgWrapper, curImg, targetImage){
 Carousel.prototype.clearResetInterval = function clearResetInterval() {
   if (this.auto) {
     clearInterval(this.slideInterval);
-    this.slideInterval = setInterval(
-      this.nextImgSlider.bind(this),
-      this.intervalTime
-    );
+    this.slideInterval = setInterval(this.nextImgSlider.bind(this), this.intervalTime);
   }
 };
-
-//Carousel.prototype.updateDots = function(currentDot, targetDot) {
-//  currentDot.classList.remove('active_dots');
-//  targetDot.classList.add('active_dots');
-//};
 
 Carousel.prototype.start = function() {
   this.imgWrapperWidth();
