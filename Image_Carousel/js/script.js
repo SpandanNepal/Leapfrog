@@ -24,11 +24,26 @@ for (var i = 0; i < images.length; i++) {
   carouselDots.appendChild(carouselDots[i]);
 }
 
-//update class to target dots
-//function updateDots(currentDot, targetDot) {
-//  currentDot.classList.remove('active_dots');
-//  targetDot.classList.add('active-dots');
-//}
+carouselDots.addEventListener('click', function(e) {
+  var targetDot = e.target.closest('button');
+
+  if (!targetDot) return;
+
+  var currentImage = imgWrapper.querySelector('.active');
+  var currentDot = carouselDots.querySelector('.active_dots');
+  var dotsArr = [].slice.call(dots);
+  var targetIndex = dotsArr.indexOf(targetDot);
+
+  var targetImage = images[targetIndex];
+  moveSlide(imgWrapper, currentImage, targetImage);
+  updateDots(currentDot, targetDot);
+
+});
+
+function updateDots(currentDot, targetDot) {
+  currentDot.classList.remove('active_dots');
+  targetDot.classList.add('active_dots');
+}
 
 var dots = carouselDots.children;
 carouselDots[0].classList.add('active_dots');
@@ -39,13 +54,16 @@ function nextSlide() {
 
   if (nextImage) {
     moveSlide(imgWrapper, currentImage, nextImage);
-    //carousel dots
-    //var currentDot = carouselDots.querySelector('.active_dots');
+    var currentDot = carouselDots.querySelector('.active_dots');
+    var nextDot = currentDot.nextElementSibling;
+    updateDots(currentDot, nextDot);
   } else {
     nextImage = images[0];
     moveSlide(imgWrapper, currentImage, nextImage);
-    //carousel dots
-    //var currentDot = carouselDots.querySelector('.active_dots');
+    var currentDot = carouselDots.querySelector('.active_dots');
+    var dotsArr = [].slice.call(dots);
+    var nextDot = dotsArr[0];
+    updateDots(currentDot, nextDot);
   }
 }
 
@@ -55,12 +73,17 @@ function prevSlide() {
 
   if (previousImage) {
     moveSlide(imgWrapper, currentImage, previousImage);
-    //carousel dots
+    var currentDot = carouselDots.querySelector('.active_dots');
+    var prevDot = currentDot.previousElementSibling;
+    updateDots(currentDot, prevDot);
   } else {
     previousImage = images[images.length - 1];
 
     moveSlide(imgWrapper, currentImage, previousImage);
-    //carousel dots
+    var currentDot = carouselDots.querySelector('.active-dots');
+    var dotsArr = [].slice.call(dots);
+    var nextDot = dotsArr[dotsArr.length - 1];
+    updateDots(currentDot, nextDot);
   }
 }
 
