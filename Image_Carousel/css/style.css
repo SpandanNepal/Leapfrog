@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgb(235, 235, 235);
+}
+.carousel_container {
+  margin: 0 auto;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+img {
+  float: left;
+}
+.carousel_image_wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.btn button#next_btn {
+  position: absolute;
+  top: 45%;
+  right: 15px;
+}
+.btn button#prev_btn {
+  position: absolute;
+  top: 45%;
+  left: 15px;
+}
+.btn button {
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  padding: 2px;
+}
+.btn button:hover {
+  background-color: transparent;
+  color: rgb(98, 164, 238);
+}
+.carousel_dots {
+  padding: 10px 0;
+  position: absolute;
+  bottom: 15px;
+  left: 33%;
+}
+.carousel_dots button {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: #333333;
+  margin-left: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel_dots button.active_dots{
+  background: rgb(98, 164, 238);
+}
+
+.carousel_dots button:hover {
+  background: rgb(98, 164, 238);
+}
+
+
