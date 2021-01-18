@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box_wrapper .box_container {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid #646464;
+  background-color: #ffffff;
+  position: relative;
+  top: 10px;
+  margin-bottom: 20px;
+}
+
+.box {
+  position: absolute;
+  border-radius: 50%;
+}
