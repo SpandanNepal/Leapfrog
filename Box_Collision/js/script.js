@@ -106,10 +106,10 @@ Play.prototype.start = function() {
   this.moveInterval();
 };
 
-//container with 15 balls of size 20px
+//container with 15 balls of size - 20px
 var game = new Play(15, 20);
 game.start();
 
-//container with 100 balls of size 5px
+//container with 100 balls of size - 5px
 var game1 = new Play(100, 5);
 game1.start();
