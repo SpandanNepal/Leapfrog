@@ -66,7 +66,7 @@ GameStart.prototype.initiateCar = function(playerCar, posLeft, posBtm) {
     this.playerCar = new Car(this.container, 'url(images/PlayerCar.png', posLeft, posBtm);
     this.playerCar.carstart();
   } else {
-    var enemyCar = new Car(this.container, 'url(images/opponentCar.png)', posLeft, posBtm);
+    var enemyCar = new Car(this.container, 'url(images/OpponentCar.png)', posLeft, posBtm);
     enemyCar.carstart();
    this.opponentCar.push(enemyCar);
   }
