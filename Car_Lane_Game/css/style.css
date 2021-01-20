@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.container {
+  width: 500px;
+  height: 625px;
+  background: url('../images/road.png');
+  background-size: 100% 100%;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.instruction,
+.finish {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.instruction > h2 {
+  font-size: 40px;
+}
+
+.live_score{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 32px;
+  color: rgb(0, 255, 255);
+}
+
+.finish > h2 {
+  font-size: 60px;
+  color: rgb(0, 255, 21);
+}
+
+.start_button {
+  outline: none;
+  cursor: pointer;
+  display: block;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-top: 10px;
+  margin-left: 35%;
+}
+
+.start_button:hover {
+  color:blue;
+}
+
+.instruction{
+  color: white;
+}
