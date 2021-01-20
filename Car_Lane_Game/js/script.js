@@ -37,9 +37,7 @@ GameStart.prototype.start = function() {
   this.containerH = this.container.clientHeight;
 
   this.initiateRoad();
-
   this.initiateCar(true, 50, 40);
-
   document.onkeydown = this.carMove.bind(this);
 
   this.trackInterval = setInterval(this.loopTrac.bind(this), 1000 / 90);
