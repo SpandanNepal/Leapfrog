@@ -1,0 +1,120 @@
+.instructions-content h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+li{
+  margin-bottom: 8px;
+  font-size: 18px;
+  display: list-item;
+}
+
+.instructions-content ul > li{
+  font-family: monospace;
+  font-weight: bold;
+  list-style-type: upper-roman;
+}
+
+.game-continue{
+	margin-top: 20px;
+	font-size: 20px;
+	padding: 12px 25px;
+	border-radius: 20px;
+	background-color: #0bb40b;
+	color: white;
+	float: right;
+	cursor: pointer;
+	border: 1px solid #ff0606;
+	transition-duration: 1s;
+}
+
+.game-continue:hover{
+	transition-duration: 1s;
+	padding: 15px 28px;
+}
+
+.game-controller h2{
+	color: white;
+}
+
+.game-inst{
+	margin-top: 50px;
+	float: left;
+	font-size: 20px;
+	padding: 8px 12px;
+	border-radius: 20px;
+	background-color: #0bb40b;
+	color: white;
+	cursor: pointer;
+}
+
+.game-inst:hover{
+	transition-duration: 1s;
+	padding: 10px 15px;
+}
+
+.gameplay-btn{
+	font-size: 20px;
+	padding: 8px 12px;
+	border-radius: 20px;
+	background-color: #0bb40b;
+	color: white;
+	cursor: pointer;
+}
+
+.gameplay-btn:hover{
+	transition-duration: 1s;
+}
+
+.dice-indicator{
+	width: 60px;
+	height: 45px;
+	padding-top: 15px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.dice-info-below{
+	clear: both;
+}
+
+.dice-info-above{
+	overflow: auto; 
+	margin-bottom: 20px;
+}
+
+#mplayer{
+	margin-top: 10px;
+	color: white;
+}
+
+#red{
+	float: left;
+	background-color: #ff0606;
+	transition-duration: 1s;
+}
+
+#yellow{
+	float: right;
+	background-color: #ffff00;
+}
+
+#blue{
+	float: left;
+	background-color: #0000ff;
+}
+
+#green{
+	float: right;
+	background-color: #008000;
+}
+
+#dice-face{
+	margin: 30px 0;
+	cursor: pointer;
+}
+
+.dice-rotate{
+	transform: rotate(360deg);
+	transition:  all 0.9s ease-in-out 0s;
+}
