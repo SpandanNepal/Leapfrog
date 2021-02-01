@@ -9,18 +9,43 @@ canvas.height = size;
 canvas.width = size;
 canvas.style.border = '1px solid black';
 
-function viewInst(){
+function audio(path)
+{
+    var audio = new Audio(path);
+    audio.play();
+}
+
+//reset function for multiplayer game
+function reset()
+{
+    audio('audio/select.mp3');
+	// document.querySelector('.players-container').style.display = 'block';
+    // document.querySelector('.game-container').style.display = 'none';
+    // for (var i = 0; i < nop; i++){
+    //     players[i].position = 0;
+    //     playerScoreDisplay(i);
+    //     playMulti();
+    // }
+    location.reload();
+}
+
+function viewInst()
+{
+    audio('audio/select.mp3');
     document.querySelector('.instructions-container').style.display = 'block';
     document.querySelector('.players-container').style.display = 'none';
 }
 
-function choosePlayers(){
+function choosePlayers()
+{
+    audio('audio/select.mp3');
     document.querySelector('.instructions-container').style.display = 'none';
     document.querySelector('.players-container').style.display = 'block';
 }
 
 function playersSelected(clicked)
-{   
+{  
+    audio('audio/select.mp3');
     var colors = ['red', 'yellow', 'blue', 'green'];
 
     if (clicked == 'two-player') {
@@ -65,9 +90,9 @@ drawSnakesLadders(sources, function (images)
 });
 
 function start()
-{   diceRoll();
-	//disableButton("btn1");
-    setTimeout(dealyPlayMulti, 1400);
-	//setTimeout(enableButton("btn1"), 500);
-	rollTheDice();
+{
+    diceRoll();
+    setTimeout(playMulti, 1000);
+    diceFaceDisplay();
+    audio('audio/dice-roll.mp3')
 }

@@ -1,7 +1,6 @@
 var tiles = new Array();
 var players = new Array();
 var size = 623;
-//var p; // player objects for single player game
 var nop; // No of players in multiplayer game
 var globalpostion = 0; // highest position occupied by any player 
 var randomNumber;
@@ -15,6 +14,7 @@ class Tile{
 		this.next = next; // next Tile
 	}
 }
+
 function setup()
 {
 	var wh = size; // width of Board
@@ -65,14 +65,6 @@ function setup()
 	//tiles[97].next = 79;
 }
 setup();
-
-//reset function for multiplayer game
-function multireset()
-{
-	setup();
-	p = new Player("black");
-	multiplayer();
-}
 
 //Function to render the square board
 function renderSquareBoard() 
@@ -152,7 +144,7 @@ function diceRoll()
 	}, 900);
 }
 
-function rollTheDice() {
+function diceFaceDisplay() {
 	var faceValue = rand();
 	var diceFace = document.getElementById('dice-face');
 	setTimeout(function() {

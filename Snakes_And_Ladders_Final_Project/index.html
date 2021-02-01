@@ -22,6 +22,7 @@
                     <li>Each player will get a chance to roll the dice turn by turn, and move up the board based on the number you receive.</li>
                     <li>If you land at the bottom of a ladder, you can move up to the top of the ladder.</li>
                     <li>If you land on the head of a snake, you must slide down to the bottom of the snake.</li>
+                    <li>If you get a six then you'll get a chance to roll the dice again</li>
                     <li>As you move upwards the number of snakes will increase.</li>
                     <li>The first player to reach 100 will be declared as the winner of the game.</li>                
                 </ul>
@@ -53,7 +54,7 @@
                 <div class="game-controller">
                     <h2>Game Controls</h2><br>
                     <div id="mbtn">
-                        <button class="gameplay-btn" id="reset" onclick="multireset()">RESTART</button>
+                        <button class="gameplay-btn" id="reset" onclick="reset()">RESTART</button>
                     </div>
                 </div>
                 <div class="dice-wrapper">
@@ -61,6 +62,7 @@
                         <img id="dice-face" onclick="start()" src="images/face-1.png" alt="one">
                     </div>
                     <p id="1or6"></p>
+                    <p id ="mplayer"></p>
                     <div class="dice-info-wrapper">
                         <div class="dice-info-above">
                             <div id="red" class="dice-indicator">0</div>
@@ -71,7 +73,6 @@
                             <div id="green" class="dice-indicator">0</div>
                         </div>
                     </div>
-                    <p id ="mplayer"></p>
                 </div>
             </div>
         </div>

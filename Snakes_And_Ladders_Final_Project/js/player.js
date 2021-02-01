@@ -70,16 +70,21 @@ class Player
 	move()
 	{
 		if (this.position != 0) {
-			//pastPos = this.pre;
-			//nextPos = this.position;
 			this.remove(this.pre);
 			//stepMovement();
 			this.show(this.position);
 			//check if ladder or snake present		
 			if(tiles[this.position - 1].next != this.position)
 			{
+				//audio('audio/snake-bite.mp3');
 				this.pre = this.position;
 				this.position = tiles[this.position - 1].next;
+				if (this.position > this.pre) {
+					audio('audio/ladder-climb.mp3');
+				}
+				else {
+					audio('audio/snake-bite.mp3');
+				}
 				this.remove(this.pre);
 				//stepMovement();
 				this.show(this.position);
@@ -90,6 +95,7 @@ class Player
 
 //var pastPos;
 //var nextPos;
+/*
 function stepMovement()
 {
 	console.log("stepMovement")
@@ -103,21 +109,12 @@ function stepMovement()
 		}, 1000);
 	}
 }
+*/
 
 function rand()
 {
 	randomNumber = Math.ceil(Math.random() * 6);
 	return randomNumber;
-}
-
-function enableButton(id)
-{
-	document.getElementById(id).disabled = false;
-}
-
-function disableButton(id)
-{
-  document.getElementById(id).disabled = true;
 }
 
 function multiPlayerShowTurn(player) // display current player color in multiplayer
@@ -127,7 +124,7 @@ function multiPlayerShowTurn(player) // display current player color in multipla
 
 var i = 0;
 var prevTurn;
-function dealyPlayMulti()
+function playMulti()
 {
 	prevTurn = i;//players[i].color;
 	players[i].roll(randomNumber);
@@ -143,17 +140,28 @@ function dealyPlayMulti()
 		globalpostion = players[i].position;
 	if(globalpostion == 100)
 	{
-		alert(newFunction() + " Wins");
+		audio('audio/winner.mp3');
 	}
-	else{
+	else {
+		reChance();
+	}
+	function newFunction() {
+		return players[i].color;
+	}
+}
+
+function reChance()
+{
+	if (randomNumber == 6) {
+		audio('audio/six-roll.mp3');
+		i = i;	
+	}
+	else {
 		++i;
 		if (i == nop) {
 			i = 0;
 		}
 		multiPlayerShowTurn(players[i]);
-	}
-	function newFunction() {
-		return players[i].color;
 	}
 }
 
@@ -180,10 +188,12 @@ function playerSamePosition()
 						if (counter == prevTurn) {
 							players[i].position = 0;
 							playerScoreDisplay(i);
+							audio('audio/snake-bite.mp3');
 						}
 						else {
 							players[counter].position = 0;
 							playerScoreDisplay(counter);
+							audio('audio/snake-bite.mp3');
 						}
 					}
 				}
@@ -208,9 +218,3 @@ function playerScoreDisplay(val)
 		document.getElementById('green').innerHTML = players[val].position;
 	}
 }
-
-// function playMulti()
-// {
-// 	setTimeout(dealyPlayMulti, 900);
-// }
-
