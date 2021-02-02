@@ -19,13 +19,6 @@ function audio(path)
 function reset()
 {
     audio('audio/select.mp3');
-	// document.querySelector('.players-container').style.display = 'block';
-    // document.querySelector('.game-container').style.display = 'none';
-    // for (var i = 0; i < nop; i++){
-    //     players[i].position = 0;
-    //     playerScoreDisplay(i);
-    //     playMulti();
-    // }
     location.reload();
 }
 

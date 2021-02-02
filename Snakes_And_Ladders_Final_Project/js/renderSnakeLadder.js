@@ -3,10 +3,13 @@ var sources = {
   snakeB: 'images/snake-medium-opposite.png',
   snakeC: 'images/snake-long-slanted-right.png',
   snakeD: 'images/snake-medium.png',
+  snakeE: 'images/snake-small-slanted.png',
+  snakeF: 'images/snake-medium-opposite.png',
   ladderA: 'images/ladder-medium.png',
   ladderB: 'images/ladder-small.png',
   ladderC: 'images/ladder-small.png',
-  ladderD: 'images/ladder-medium.png'
+  ladderD: 'images/ladder-medium.png',
+  ladderE: 'images/ladder-large.png'
 };
 
 function drawSnakesLadders(sources, callback)

@@ -2,7 +2,7 @@ var tiles = new Array();
 var players = new Array();
 var size = 623;
 var nop; // No of players in multiplayer game
-var globalpostion = 0; // highest position occupied by any player 
+var globalPosition = 0; // highest position occupied by any player 
 var randomNumber;
 
 class Tile{
@@ -43,13 +43,18 @@ function setup()
 		x2 = 9 * boxwh;
 		y -= boxHeight;
 	}
+	snakesLaddersPosition();
+}
+setup();
 
+function snakesLaddersPosition()
+{
 	//ladders
 	tiles[17].next = 38;
 	tiles[8].next = 49;
 	tiles[53].next = 94;
 	tiles[59].next = 80;
-	//tiles[20].next = 42;
+	tiles[14].next = 75;
 	//tiles[50].next = 67;
 	//tiles[71].next = 91;
 	//tiles[79].next = 99;
@@ -59,12 +64,11 @@ function setup()
 	tiles[82].next = 43;
 	tiles[72].next = 16;
 	tiles[43].next = 4;
-	//tiles[86].next = 36;
-	//tiles[92].next = 73;
+	tiles[64].next = 34;
+	tiles[89].next = 31;
 	//tiles[94].next = 75;
 	//tiles[97].next = 79;
 }
-setup();
 
 //Function to render the square board
 function renderSquareBoard() 
@@ -97,7 +101,7 @@ function renderSquareBoard()
             }
             ctx.fillRect(x, y, size/10, size/10);
             squares[columnNumber] = x.toString() + ',' + y.toString();
-            ctx.font = "12px 'Potta One', cursive";
+            ctx.font = "bold 12px PottaOne-Regular";
             ctx.fillStyle = "black";
             ctx.fillText(columnNumber, x+3, y - 48 + size/10);
 
@@ -120,20 +124,6 @@ function renderSquareBoard()
         leftToRight = !leftToRight;
     }
 }
-
-// function rollTheDice() {
-// 	var faceValue, output = '';
-// 	faceValue = rand() - 1;
-	
-//     output += "&#x268" + faceValue + "; ";
-//     document.getElementById('dice').innerHTML = output;
-// }
-// function diceRoll()
-// {
-// 	var dice = document.getElementById('dice-face');
-// 	dice.style.transform = 'rotate(360deg)';
-// 	dice.style.transition =  'all 0.9s ease-in-out 0s';
-// }
 
 function diceRoll()
 {

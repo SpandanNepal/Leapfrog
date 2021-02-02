@@ -33,14 +33,13 @@ class Player
 			var p = tiles[pos-1];
 			ctx.clearRect(p.x, p.y, p.wh, p.ht);
 			if (pos % 2 == 0) {
-
 				ctx.fillStyle = '#ffffff';
 			}
 			else {
 				ctx.fillStyle = '#feb511';
 			}
 			ctx.fillRect(p.x, p.y, p.wh, p.ht);
-			ctx.font = "12px 'Potta One', cursive";
+			ctx.font = "bold 12px PottaOne-Regular";
 			ctx.fillStyle = 'black';
 			ctx.fillText(pos, p.x + 3, p.y - 48 + size/10);
 		}
@@ -76,7 +75,6 @@ class Player
 			//check if ladder or snake present		
 			if(tiles[this.position - 1].next != this.position)
 			{
-				//audio('audio/snake-bite.mp3');
 				this.pre = this.position;
 				this.position = tiles[this.position - 1].next;
 				if (this.position > this.pre) {
@@ -93,31 +91,13 @@ class Player
 	}
 }
 
-//var pastPos;
-//var nextPos;
-/*
-function stepMovement()
-{
-	console.log("stepMovement")
-	for(let i = pastPos; i < nextPos; i++){
-		console.log('inside for');
-		this.remove(this.i);
-		setTimeout(function ()
-		{
-			console.log('setTimeout');
-			this.show(this.i);
-		}, 1000);
-	}
-}
-*/
-
 function rand()
 {
 	randomNumber = Math.ceil(Math.random() * 6);
 	return randomNumber;
 }
 
-function multiPlayerShowTurn(player) // display current player color in multiplayer
+function multiPlayerShowTurn(player) 
 {
 	document.getElementById("mplayer").innerHTML = player.color + "'s Turn";
 }
@@ -126,7 +106,7 @@ var i = 0;
 var prevTurn;
 function playMulti()
 {
-	prevTurn = i;//players[i].color;
+	prevTurn = i;
 	players[i].roll(randomNumber);
 	players[i].move();
 	playerSamePosition();
@@ -136,9 +116,10 @@ function playMulti()
 		if(players[k].position > 0)
 			players[k].show(players[k].position);
 	}
-	if(globalpostion <= players[i].position)
-		globalpostion = players[i].position;
-	if(globalpostion == 100)
+	if(globalPosition <= players[i].position)
+		globalPosition = players[i].position;
+	addMoreSnakesLadders();
+	if(globalPosition == 100)
 	{
 		audio('audio/winner.mp3');
 	}
@@ -147,6 +128,28 @@ function playMulti()
 	}
 	function newFunction() {
 		return players[i].color;
+	}
+}
+
+function addMoreSnakesLadders()
+{
+	if (globalPosition > 10) {
+		drawSnakesLadders(sources, function (images)
+		{
+			ctx.drawImage(images.ladderE, 333, 150);
+		});
+	}
+	if (globalPosition > 50) {
+		drawSnakesLadders(sources, function (images)
+		{
+			ctx.drawImage(images.snakeE, 250, 200);
+		});
+	}
+	if (globalPosition > 60) {
+		drawSnakesLadders(sources, function (images)
+		{
+			ctx.drawImage(images.snakeF, 570, 90);
+		});
 	}
 }
 
