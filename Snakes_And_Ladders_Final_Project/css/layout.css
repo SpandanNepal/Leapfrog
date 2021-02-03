@@ -79,3 +79,11 @@
     padding: 10px;
     width: 150px;
 }
+
+.winner{
+    margin-top: 20px;
+    text-align: center;
+    color: #ffff00;
+    font-size: 30px;
+    display: none;
+}

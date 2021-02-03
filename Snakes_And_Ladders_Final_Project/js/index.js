@@ -22,7 +22,7 @@ function reset()
     location.reload();
 }
 
-function viewInst()
+function viewInstructions()
 {
     audio('audio/select.mp3');
     document.querySelector('.instructions-container').style.display = 'block';
@@ -69,17 +69,11 @@ function playersSelected(clicked)
 }
 
 renderSquareBoard();
+renderSnakeLadders();
 
-drawSnakesLadders(sources, function (images)
+drawSnakesLadders(heart, function (images)
 {
-    ctx.drawImage(images.snakeA, 80, 25);
-    ctx.drawImage(images.snakeB, 190, 320);
-    ctx.drawImage(images.ladderB, 145, 400);
-    ctx.drawImage(images.ladderC, 20, 140);
-    ctx.drawImage(images.snakeC, 270, 120);
-    ctx.drawImage(images.ladderD, 520, 330);
-    ctx.drawImage(images.snakeD, 140, 70);
-    ctx.drawImage(images.ladderA, 395, 20);
+    ctx.drawImage(images.heartA, 450, 452);
 });
 
 function start()

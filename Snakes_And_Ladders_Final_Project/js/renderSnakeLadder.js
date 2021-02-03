@@ -12,6 +12,13 @@ var sources = {
   ladderE: 'images/ladder-large.png'
 };
 
+/*
+var heart = {
+  heartA: 'images/heart.png',
+  heartB: 'images/heart.png'
+}
+*/
+
 function drawSnakesLadders(sources, callback)
 {
   var images = {};
@@ -31,3 +38,45 @@ function drawSnakesLadders(sources, callback)
     images[src].src = sources[src];
   }
 }
+
+function renderSnakeLadders()
+{
+  drawSnakesLadders(sources, function (images)
+  {
+    if (globalPosition % 2 == 0) {
+      renderSquareBoard();
+      ctx.drawImage(images.snakeA, 80, 25);
+      ctx.drawImage(images.snakeB, 190, 320);
+      showPlayerPosition();
+    }
+    else {
+      renderSquareBoard();
+      ctx.drawImage(images.snakeA, 205, 25);
+      ctx.drawImage(images.snakeB, 70, 320);
+      showPlayerPosition();
+    }
+    
+    ctx.drawImage(images.ladderB, 145, 400);
+    ctx.drawImage(images.ladderC, 20, 140);
+    ctx.drawImage(images.snakeC, 270, 120);
+    ctx.drawImage(images.ladderD, 520, 330);
+    ctx.drawImage(images.snakeD, 140, 70);
+    ctx.drawImage(images.ladderA, 395, 20);
+  });
+}
+/*
+function renderSnakeLadders()
+{
+  drawSnakesLadders(sources, function (images)
+		{
+			ctx.drawImage(images.snakeA, 80, 25);
+			ctx.drawImage(images.snakeB, 190, 320);
+			ctx.drawImage(images.ladderB, 145, 400);
+			ctx.drawImage(images.ladderC, 20, 140);
+			ctx.drawImage(images.snakeC, 270, 120);
+			ctx.drawImage(images.ladderD, 520, 330);
+			ctx.drawImage(images.snakeD, 140, 70);
+			ctx.drawImage(images.ladderA, 395, 20);
+		});
+}
+*/

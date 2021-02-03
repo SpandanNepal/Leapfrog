@@ -46,17 +46,7 @@ class Player
 	}
 	show(pos) // show updated position
 	{
-		drawSnakesLadders(sources, function (images)
-		{
-			ctx.drawImage(images.snakeA, 80, 25);
-			ctx.drawImage(images.snakeB, 190, 320);
-			ctx.drawImage(images.ladderB, 145, 400);
-			ctx.drawImage(images.ladderC, 20, 140);
-			ctx.drawImage(images.snakeC, 270, 120);
-			ctx.drawImage(images.ladderD, 520, 330);
-			ctx.drawImage(images.snakeD, 140, 70);
-			ctx.drawImage(images.ladderA, 395, 20);
-		});
+		
 		var cur = tiles[pos-1];
 		ctx.beginPath();
 		ctx.arc(cur.x + 30, cur.y + 35, 20, 0, 2 * Math.PI);
@@ -75,6 +65,9 @@ class Player
 			//check if ladder or snake present		
 			if(tiles[this.position - 1].next != this.position)
 			{
+				if (heart == this.color) {
+					console.log('landed in snake');
+				}
 				this.pre = this.position;
 				this.position = tiles[this.position - 1].next;
 				if (this.position > this.pre) {
@@ -84,7 +77,6 @@ class Player
 					audio('audio/snake-bite.mp3');
 				}
 				this.remove(this.pre);
-				//stepMovement();
 				this.show(this.position);
 			}
 		}
@@ -104,6 +96,7 @@ function multiPlayerShowTurn(player)
 
 var i = 0;
 var prevTurn;
+var heart;
 function playMulti()
 {
 	prevTurn = i;
@@ -111,17 +104,18 @@ function playMulti()
 	players[i].move();
 	playerSamePosition();
 	playerScoreDisplay(i);
-	for(var k = 0; k < nop; k++)
-	{
-		if(players[k].position > 0)
-			players[k].show(players[k].position);
-	}
-	if(globalPosition <= players[i].position)
+	renderSnakeLadders();
+	showPlayerPosition();
+	console.log(globalPosition);
+	snakesLaddersPosition();
+	if (globalPosition <= players[i].position)
 		globalPosition = players[i].position;
 	addMoreSnakesLadders();
 	if(globalPosition == 100)
 	{
 		audio('audio/winner.mp3');
+		document.querySelector('.winner').style.display = 'block';
+		document.querySelector('.winner').innerHTML = players[i].color.toUpperCase() + " WINS";
 	}
 	else {
 		reChance();
@@ -131,12 +125,35 @@ function playMulti()
 	}
 }
 
+function showPlayerPosition()
+{
+	for(var k = 0; k < nop; k++)
+	{
+		if(players[k].position > 0)
+			players[k].show(players[k].position);
+	}
+}
+
+/*
+var Immune = false;
+function heartImmunity()
+{
+	if (players[i].position == 28) {
+		//console.log('28');
+		Immune = true;
+		heart = players[i].color;
+		//console.log(document.getElementById(heart));
+		document.getElementById('immune-text').innerHTML = heart;
+	}
+}
+*/
+
 function addMoreSnakesLadders()
 {
 	if (globalPosition > 10) {
 		drawSnakesLadders(sources, function (images)
 		{
-			ctx.drawImage(images.ladderE, 333, 150);
+			ctx.drawImage(images.ladderE, 333, 90);
 		});
 	}
 	if (globalPosition > 50) {
@@ -165,15 +182,6 @@ function reChance()
 			i = 0;
 		}
 		multiPlayerShowTurn(players[i]);
-	}
-}
-
-function getSixOne(){
-	if (players[i].position == 0) {
-		document.getElementById('1or6').innerHTML = 'Roll a 6 or 1 to start';
-	}
-	else {
-		document.getElementById('1or6').innerHTML = '';
 	}
 }
 

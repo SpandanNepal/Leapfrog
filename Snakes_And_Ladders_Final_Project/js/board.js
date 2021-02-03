@@ -19,10 +19,10 @@ function setup()
 {
 	var wh = size; // width of Board
 	var ht = size; // height of Board
-	var boxwh = wh/10; //width of Tile
+	var boxwidth = wh/10; //width of Tile
 	var boxHeight = ht/10; //height of Tile
 	var x1 = 0; //  co-ordinate of First Tile
-	var x2 = 9 * boxwh;
+	var x2 = 9 * boxwidth;
 	var y = 9 * boxHeight;
 	var canvas=0;
 	for(var i = 0; i < 10; ++i)
@@ -31,19 +31,18 @@ function setup()
 		{
 			if(i % 2 == 0)
 			{
-				tiles[canvas++] = new Tile(x1,y,boxwh,boxHeight,canvas);
-				x1 += boxwh;
+				tiles[canvas++] = new Tile(x1,y,boxwidth,boxHeight,canvas);
+				x1 += boxwidth;
 			}
 			else{
-				tiles[canvas++] = new Tile(x2,y,boxwh,boxHeight,canvas);
-				x2 -= boxwh;
+				tiles[canvas++] = new Tile(x2,y,boxwidth,boxHeight,canvas);
+				x2 -= boxwidth;
 			}
 		}
 		x1 = 0;
-		x2 = 9 * boxwh;
+		x2 = 9 * boxwidth;
 		y -= boxHeight;
 	}
-	snakesLaddersPosition();
 }
 setup();
 
@@ -54,16 +53,28 @@ function snakesLaddersPosition()
 	tiles[8].next = 49;
 	tiles[53].next = 94;
 	tiles[59].next = 80;
-	tiles[14].next = 75;
+	tiles[25].next = 86;
+	
 	//tiles[50].next = 67;
 	//tiles[71].next = 91;
 	//tiles[79].next = 99;
 
 	//snakes
-	tiles[98].next = 2;
+	if (globalPosition % 2 == 0) {
+		tiles[98].next = 2;
+		tiles[43].next = 4;
+		tiles[96].next = 97
+		tiles[41].next = 42;
+	}
+	else {
+		tiles[96].next = 4;
+		tiles[41].next = 2;
+		tiles[98].next = 99;
+		tiles[43].next = 44;
+	}
 	tiles[82].next = 43;
 	tiles[72].next = 16;
-	tiles[43].next = 4;
+	
 	tiles[64].next = 34;
 	tiles[89].next = 31;
 	//tiles[94].next = 75;
@@ -76,10 +87,10 @@ function renderSquareBoard()
     const colorA = "#ffffff";
     const colorB = "#feb511";
 
-    var initRow = 1; var totalRows = 10; var initcolumn = 1; var totalColumns = 10;
+    var initialRow = 1; var totalRows = 10; var initialColumn = 1; var totalColumns = 10;
     var x = 0; var y = canvas.height - size/10;
     var columnNumber = 1; var leftToRight = true;
-    for (var row = initRow; row <= totalRows; row++) 
+    for (var row = initialRow; row <= totalRows; row++) 
     {
         if (leftToRight) 
         {
@@ -89,7 +100,7 @@ function renderSquareBoard()
         {
             x = canvas.width - size/10;
         }
-        for (var column = initcolumn; column <= totalColumns; column++) 
+        for (var column = initialColumn; column <= totalColumns; column++) 
         {
             if (columnNumber % 2 == 0) 
             {

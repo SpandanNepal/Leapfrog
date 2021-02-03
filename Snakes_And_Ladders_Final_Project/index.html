@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&L</title>
+    <title>Snakes and Ladders - Final Project</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/style.css">
@@ -40,7 +40,7 @@
                 <div id="three-player" class="players" onclick="playersSelected(this.id)">
                     <img src="images/three.png" alt="">
                 </div>
-                <button onclick="viewInst()" class="game-inst"><--Go Back</button>
+                <button onclick="viewInstructions()" class="game-inst"><--Go Back</button>
             </div>
             
         </div>
@@ -59,7 +59,6 @@
                     <div id="dice">
                         <img id="dice-face" onclick="start()" src="images/face-1.png" alt="one">
                     </div>
-                    <p id="1or6"></p>
                     <p id ="mplayer"></p>
                     <div class="dice-info-wrapper">
                         <div class="dice-info-above">
@@ -71,13 +70,14 @@
                             <div id="green" class="dice-indicator">0</div>
                         </div>
                     </div>
+                    <div class="winner"></div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </body>
 <script src="js/board.js"></script>
-<script src="js/renderSnakeLadder.js"></script>
 <script src="js/player.js"></script>
+<script src="js/renderSnakeLadder.js"></script>
 <script src="js/index.js"></script>
 </html>
