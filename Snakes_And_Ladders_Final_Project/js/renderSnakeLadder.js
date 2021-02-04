@@ -12,13 +12,6 @@ var sources = {
   ladderE: 'images/ladder-large.png'
 };
 
-/*
-var heart = {
-  heartA: 'images/heart.png',
-  heartB: 'images/heart.png'
-}
-*/
-
 function drawSnakesLadders(sources, callback)
 {
   var images = {};

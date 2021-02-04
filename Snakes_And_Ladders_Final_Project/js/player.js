@@ -60,14 +60,10 @@ class Player
 	{
 		if (this.position != 0) {
 			this.remove(this.pre);
-			//stepMovement();
 			this.show(this.position);
 			//check if ladder or snake present		
 			if(tiles[this.position - 1].next != this.position)
 			{
-				if (heart == this.color) {
-					console.log('landed in snake');
-				}
 				this.pre = this.position;
 				this.position = tiles[this.position - 1].next;
 				if (this.position > this.pre) {
@@ -103,13 +99,12 @@ function playMulti()
 	players[i].roll(randomNumber);
 	players[i].move();
 	playerSamePosition();
-	playerScoreDisplay(i);
 	renderSnakeLadders();
-	showPlayerPosition();
-	console.log(globalPosition);
-	snakesLaddersPosition();
 	if (globalPosition <= players[i].position)
 		globalPosition = players[i].position;
+	snakesLaddersPosition();
+	playerScoreDisplay(i);
+	showPlayerPosition();
 	addMoreSnakesLadders();
 	if(globalPosition == 100)
 	{
@@ -119,9 +114,6 @@ function playMulti()
 	}
 	else {
 		reChance();
-	}
-	function newFunction() {
-		return players[i].color;
 	}
 }
 
@@ -133,20 +125,6 @@ function showPlayerPosition()
 			players[k].show(players[k].position);
 	}
 }
-
-/*
-var Immune = false;
-function heartImmunity()
-{
-	if (players[i].position == 28) {
-		//console.log('28');
-		Immune = true;
-		heart = players[i].color;
-		//console.log(document.getElementById(heart));
-		document.getElementById('immune-text').innerHTML = heart;
-	}
-}
-*/
 
 function addMoreSnakesLadders()
 {

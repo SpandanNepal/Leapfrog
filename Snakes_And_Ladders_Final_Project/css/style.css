@@ -1,18 +1,18 @@
 .instructions-content h1{
-  text-align: center;
-  margin-bottom: 30px;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 li{
   margin-bottom: 8px;
-  font-size: 18px;
-  display: list-item;
+	font-size: 18px;
+	display: list-item;
 }
 
 .instructions-content ul > li{
-  font-family: monospace;
-  font-weight: bold;
-  list-style-type: upper-roman;
+	font-family: monospace;
+	font-weight: bold;
+	list-style-type: upper-roman;
 }
 
 .game-continue{

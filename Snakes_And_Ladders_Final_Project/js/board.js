@@ -24,18 +24,18 @@ function setup()
 	var x1 = 0; //  co-ordinate of First Tile
 	var x2 = 9 * boxwidth;
 	var y = 9 * boxHeight;
-	var canvas=0;
+	var counter=0;
 	for(var i = 0; i < 10; ++i)
 	{
 		for(var j = 0; j < 10; ++j)
 		{
 			if(i % 2 == 0)
 			{
-				tiles[canvas++] = new Tile(x1,y,boxwidth,boxHeight,canvas);
+				tiles[counter++] = new Tile(x1,y,boxwidth,boxHeight,counter);
 				x1 += boxwidth;
 			}
 			else{
-				tiles[canvas++] = new Tile(x2,y,boxwidth,boxHeight,canvas);
+				tiles[counter++] = new Tile(x2,y,boxwidth,boxHeight,counter);
 				x2 -= boxwidth;
 			}
 		}
@@ -45,41 +45,6 @@ function setup()
 	}
 }
 setup();
-
-function snakesLaddersPosition()
-{
-	//ladders
-	tiles[17].next = 38;
-	tiles[8].next = 49;
-	tiles[53].next = 94;
-	tiles[59].next = 80;
-	tiles[25].next = 86;
-	
-	//tiles[50].next = 67;
-	//tiles[71].next = 91;
-	//tiles[79].next = 99;
-
-	//snakes
-	if (globalPosition % 2 == 0) {
-		tiles[98].next = 2;
-		tiles[43].next = 4;
-		tiles[96].next = 97
-		tiles[41].next = 42;
-	}
-	else {
-		tiles[96].next = 4;
-		tiles[41].next = 2;
-		tiles[98].next = 99;
-		tiles[43].next = 44;
-	}
-	tiles[82].next = 43;
-	tiles[72].next = 16;
-	
-	tiles[64].next = 34;
-	tiles[89].next = 31;
-	//tiles[94].next = 75;
-	//tiles[97].next = 79;
-}
 
 //Function to render the square board
 function renderSquareBoard() 
@@ -134,6 +99,35 @@ function renderSquareBoard()
         y -= size/10;
         leftToRight = !leftToRight;
     }
+}
+
+function snakesLaddersPosition()
+{
+	//ladders
+	tiles[17].next = 38;
+	tiles[8].next = 49;
+	tiles[53].next = 94;
+	tiles[59].next = 80;
+	tiles[25].next = 86;
+
+	//snakes
+	if (globalPosition % 2 == 0) {
+		tiles[98].next = 2;
+		tiles[43].next = 4;
+		tiles[96].next = 97
+		tiles[41].next = 42;
+	}
+	else {
+		tiles[96].next = 4;
+		tiles[41].next = 2;
+		tiles[98].next = 99;
+		tiles[43].next = 44;
+	}
+	tiles[82].next = 43;
+	tiles[72].next = 16;
+	
+	tiles[64].next = 34;
+	tiles[89].next = 31;
 }
 
 function diceRoll()

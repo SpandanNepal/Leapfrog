@@ -71,11 +71,6 @@ function playersSelected(clicked)
 renderSquareBoard();
 renderSnakeLadders();
 
-drawSnakesLadders(heart, function (images)
-{
-    ctx.drawImage(images.heartA, 450, 452);
-});
-
 function start()
 {
     diceRoll();
