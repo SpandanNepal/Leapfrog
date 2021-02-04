@@ -92,7 +92,6 @@ function multiPlayerShowTurn(player)
 
 var i = 0;
 var prevTurn;
-var heart;
 function playMulti()
 {
 	prevTurn = i;

@@ -76,24 +76,18 @@ function renderSquareBoard()
                 ctx.fillStyle = colorB;
             }
             ctx.fillRect(x, y, size/10, size/10);
-            squares[columnNumber] = x.toString() + ',' + y.toString();
             ctx.font = "bold 12px PottaOne-Regular";
             ctx.fillStyle = "black";
             ctx.fillText(columnNumber, x+3, y - 48 + size/10);
 
-            //var x1, y1;
             if (leftToRight) 
             {
                 x += size/10;
-
-                x1 = x + (size/10 / 2);
             }
             else 
             {
                 x -= size/10;
-                x1 = x - (size/10 / 2);
             }
-            y1 = y - (size/10 / 2);
             columnNumber++;
         }
         y -= size/10;

@@ -1,7 +1,6 @@
 //Creating the Canvas
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var squares = [];
 
 var nop;
 var size = 623;
@@ -74,6 +73,7 @@ renderSnakeLadders();
 function start()
 {
     diceRoll();
+    rand()
     setTimeout(playMulti, 1000);
     diceFaceDisplay();
     audio('audio/dice-roll.mp3')
